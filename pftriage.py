@@ -546,6 +546,7 @@ class PFTriage(object):
         path = None
         try:
             path = self.pe.DIRECTORY_ENTRY_DEBUG[0].entry.PdbFileName
+            path.replace("\00", "")
         except:
             pass
         return path
